@@ -1,4 +1,5 @@
 from typing import Optional
+
 import pygame
 from pygame.locals import Color
 from pygame.sprite import Sprite

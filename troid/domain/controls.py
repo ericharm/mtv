@@ -1,5 +1,6 @@
 import pygame
 from pygame.event import Event
+
 from troid.defs.direction import Direction
 from troid.defs.game import Game
 from troid.domain import player_domain

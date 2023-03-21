@@ -1,8 +1,9 @@
 import pygame
 from pygame.locals import Color
-from troid.domain.controls import handle_key_down_event, handle_key_up_event
+
 from troid.defs.game import Game
 from troid.domain import player_domain
+from troid.domain.controls import handle_key_down_event, handle_key_up_event
 
 
 def run_game(game: Game):
