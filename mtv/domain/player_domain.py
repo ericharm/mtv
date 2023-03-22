@@ -2,7 +2,7 @@ from mtv.defs.direction import Direction
 from mtv.defs.player import GRAVITY, MAX_JUMP_SPEED, MAX_RUN_SPEED, Player
 
 
-def update_player(player: Player):
+def update_player(player: Player) -> None:
     if player.is_jumping:
         player.vely = -(MAX_JUMP_SPEED)
     player.vely += GRAVITY
@@ -19,22 +19,22 @@ def update_player(player: Player):
         _drop_player(player)
 
 
-def draw_player(player: Player):
+def draw_player(player: Player) -> None:
     player.screen.blit(player.image, player.rect)
 
 
-def make_player_run(player, direction: Direction):
+def make_player_run(player, direction: Direction) -> None:
     if direction == Direction.left:
         player.velx = -(MAX_RUN_SPEED)
     elif direction == Direction.right:
         player.velx = MAX_RUN_SPEED
 
 
-def stop_player_running(self):
+def stop_player_running(self) -> None:
     self.velx = 0
 
 
-def make_player_jump(self):
+def make_player_jump(self) -> None:
     if self.can_jump:
         self.is_jumping = True
         self.can_jump = False
@@ -44,17 +44,17 @@ def make_player_jump(self):
         self.height_when_doublejumped = self.jump_height
 
 
-def stop_player_jumping(self):
+def stop_player_jumping(self) -> None:
     self.is_jumping = False
 
 
-def _drop_player(player: Player):
+def _drop_player(player: Player) -> None:
     player.is_jumping = False
     if player.can_jump:
         player.can_jump = False
 
 
-def _land_player(player):
+def _land_player(player) -> None:
     player.rect.bottom = player.screen.get_rect().bottom
     player.vely = 0
     player.is_jumping = False

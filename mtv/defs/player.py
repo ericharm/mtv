@@ -13,14 +13,14 @@ MAX_RUN_SPEED = 20
 PLAYER_WIDTH = 30
 PLAYER_HEIGHT = 30
 
+FILL_COLOR = Color("gray100")
+
 
 class Player(Sprite):
-    FILL_COLOR = Color("gray100")
-
     def __init__(self):
         Sprite.__init__(self)
         self.image = Surface([PLAYER_WIDTH, PLAYER_HEIGHT])
-        self.image.fill(self.FILL_COLOR)
+        self.image.fill(FILL_COLOR)
         self.rect = self.image.get_rect()
         self.screen = pygame.display.get_surface()
 
@@ -35,14 +35,14 @@ class Player(Sprite):
         self.can_doublejump = True
 
     @property
-    def on_ground(self):
+    def on_ground(self) -> bool:
         return self.rect.bottom > self.screen.get_rect().bottom
 
     @property
-    def is_doublejumping(self):
+    def is_doublejumping(self) -> bool:
         return self.is_jumping and not self.can_doublejump
 
     @property
-    def at_max_height(self):
+    def at_max_height(self) -> bool:
         bottom = self.height_when_doublejumped or 0
         return self.jump_height >= MAX_JUMP_HEIGHT + bottom
