@@ -1,4 +1,4 @@
-`git clone whatever`
+`git clone git clone https://github.com/ericharm/mtv.git`
 
 `cd mtv`
 
