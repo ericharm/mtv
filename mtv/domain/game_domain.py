@@ -1,9 +1,9 @@
 import pygame
 from pygame.locals import Color
 
-from troid.defs.game import Game
-from troid.domain import player_domain
-from troid.domain.controls import handle_key_down_event, handle_key_up_event
+from mtv.defs.game import Game
+from mtv.domain import player_domain
+from mtv.domain.controls import handle_key_down_event, handle_key_up_event
 
 
 def run_game(game: Game):

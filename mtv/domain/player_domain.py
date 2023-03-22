@@ -1,5 +1,5 @@
-from troid.defs.direction import Direction
-from troid.defs.player import GRAVITY, MAX_JUMP_SPEED, MAX_RUN_SPEED, Player
+from mtv.defs.direction import Direction
+from mtv.defs.player import GRAVITY, MAX_JUMP_SPEED, MAX_RUN_SPEED, Player
 
 
 def update_player(player: Player):

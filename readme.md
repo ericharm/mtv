@@ -1,9 +1,9 @@
 `git clone whatever`
 
-`cd troid`
+`cd mtv`
 
 `poetry shell`
 
 `poetry install`
 
-`./run/troid`
+`./run/mtv`

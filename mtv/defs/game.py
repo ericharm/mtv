@@ -1,8 +1,8 @@
 import pygame
 
-from troid.defs.player import Player
+from mtv.defs.player import Player
 
-WINDOW_TITLE = "double jump"
+WINDOW_TITLE = "mtv"
 FPS = 40
 WINDOW_WIDTH = 1080
 WINDOW_HEIGHT = 800

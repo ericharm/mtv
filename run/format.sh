@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-black . && isort .
+black . && isort . && flake8 . && mypy --check-untyped-defs .
