@@ -23,29 +23,29 @@ def draw_player(player: Player) -> None:
     player.screen.blit(player.image, player.rect)
 
 
-def make_player_run(player, direction: Direction) -> None:
+def make_player_run(player: Player, direction: Direction) -> None:
     if direction == Direction.left:
         player.velx = -(MAX_RUN_SPEED)
     elif direction == Direction.right:
         player.velx = MAX_RUN_SPEED
 
 
-def stop_player_running(self) -> None:
-    self.velx = 0
+def stop_player_running(player: Player) -> None:
+    player.velx = 0
 
 
-def make_player_jump(self) -> None:
-    if self.can_jump:
-        self.is_jumping = True
-        self.can_jump = False
-    elif self.can_doublejump:
-        self.is_jumping = True
-        self.can_doublejump = False
-        self.height_when_doublejumped = self.jump_height
+def make_player_jump(player: Player) -> None:
+    if player.can_jump:
+        player.is_jumping = True
+        player.can_jump = False
+    elif player.can_doublejump:
+        player.is_jumping = True
+        player.can_doublejump = False
+        player.height_when_doublejumped = player.jump_height
 
 
-def stop_player_jumping(self) -> None:
-    self.is_jumping = False
+def stop_player_jumping(player: Player) -> None:
+    player.is_jumping = False
 
 
 def _drop_player(player: Player) -> None:
@@ -54,7 +54,7 @@ def _drop_player(player: Player) -> None:
         player.can_jump = False
 
 
-def _land_player(player) -> None:
+def _land_player(player: Player) -> None:
     player.rect.bottom = player.screen.get_rect().bottom
     player.vely = 0
     player.is_jumping = False

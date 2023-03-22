@@ -6,7 +6,7 @@ from mtv.domain import player_domain
 from mtv.domain.controls import handle_key_down_event, handle_key_up_event
 
 
-def run_game(game: Game):
+def run_game(game: Game) -> None:
     while not game.done:
         handle_events(game)
         update_game(game)
@@ -14,17 +14,17 @@ def run_game(game: Game):
         game.clock.tick(game.fps_max)
 
 
-def draw_game(game: Game):
+def draw_game(game: Game) -> None:
     game.screen.fill(Color("gray20"))
     player_domain.draw_player(game.player)
     pygame.display.flip()
 
 
-def update_game(game: Game):
+def update_game(game: Game) -> None:
     player_domain.update_player(game.player)
 
 
-def handle_events(game: Game):
+def handle_events(game: Game) -> None:
     events = pygame.event.get()
 
     for event in events:

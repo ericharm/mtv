@@ -17,6 +17,6 @@ class Game:
     left_is_pressed = False
     right_is_pressed = False
 
-    def __init__(self):
+    def __init__(self) -> None:
         pygame.init()
         pygame.display.set_caption(WINDOW_TITLE)

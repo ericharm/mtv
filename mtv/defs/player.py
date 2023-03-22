@@ -17,7 +17,7 @@ FILL_COLOR = Color("gray100")
 
 
 class Player(Sprite):
-    def __init__(self):
+    def __init__(self) -> None:
         Sprite.__init__(self)
         self.image = Surface([PLAYER_WIDTH, PLAYER_HEIGHT])
         self.image.fill(FILL_COLOR)
