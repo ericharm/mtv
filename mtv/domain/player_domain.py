@@ -31,7 +31,8 @@ def make_player_run(player: Player, direction: Direction) -> None:
 
 
 def stop_player_running(player: Player) -> None:
-    player.velx = 0
+    if player.can_jump:
+        player.velx = 0
 
 
 def make_player_jump(player: Player) -> None:
@@ -56,9 +57,10 @@ def _drop_player(player: Player) -> None:
 
 def _land_player(player: Player) -> None:
     player.rect.bottom = player.screen.get_rect().bottom
-    player.vely = 0
-    player.is_jumping = False
     player.can_doublejump = True
-    player.can_jump = True
+    player.vely = 0
+    if not player.can_jump:
+        player.velx = 0
+        player.can_jump = True
     player.jump_height = 0
     player.height_when_doublejumped = None

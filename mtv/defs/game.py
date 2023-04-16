@@ -1,5 +1,8 @@
+from typing import List
+
 import pygame
 
+from mtv.defs.platform import Platform
 from mtv.defs.player import Player
 
 WINDOW_TITLE = "mtv"
@@ -14,9 +17,11 @@ class Game:
     clock = pygame.time.Clock()
     fps_max = FPS
     player = Player()
+    platforms: List[Platform] = []
     left_is_pressed = False
     right_is_pressed = False
 
     def __init__(self) -> None:
+        self.platforms = [Platform(20, 20, 100, 100)]
         pygame.init()
         pygame.display.set_caption(WINDOW_TITLE)
