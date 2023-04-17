@@ -16,7 +16,7 @@ class Platform(Sprite):
         self.rect.y = y
         self.screen = pygame.display.get_surface()
 
-        self.rect.midbottom = self.screen.get_rect().midbottom
+        # self.rect.midbottom = self.screen.get_rect().midbottom
 
     def draw(self):
         # pygame.draw.rect(screen, (255, 0, 0), self.rect)

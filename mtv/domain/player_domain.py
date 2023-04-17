@@ -12,8 +12,8 @@ def update_player(player: Player) -> None:
     player.rect.top += int(player.vely)
     player.jump_height += abs(player.rect.y - current_y)
 
-    if player.on_ground:
-        _land_player(player)
+    # if player.on_ground:
+    #     _land_player(player)
 
     if player.at_max_height:
         _drop_player(player)
@@ -31,8 +31,8 @@ def make_player_run(player: Player, direction: Direction) -> None:
 
 
 def stop_player_running(player: Player) -> None:
-    if player.can_jump:
-        player.velx = 0
+    # if player.can_jump:
+    player.velx = 0
 
 
 def make_player_jump(player: Player) -> None:
@@ -55,8 +55,8 @@ def _drop_player(player: Player) -> None:
         player.can_jump = False
 
 
-def _land_player(player: Player) -> None:
-    player.rect.bottom = player.screen.get_rect().bottom
+def land_player(player: Player) -> None:
+    # player.rect.bottom = player.screen.get_rect().bottom
     player.can_doublejump = True
     player.vely = 0
     if not player.can_jump:

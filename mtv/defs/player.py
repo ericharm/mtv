@@ -22,9 +22,9 @@ class Player(Sprite):
         self.image = Surface([PLAYER_WIDTH, PLAYER_HEIGHT])
         self.image.fill(FILL_COLOR)
         self.rect = self.image.get_rect()
-        self.screen = pygame.display.get_surface()
+        self.screen: Surface = pygame.display.get_surface()
 
-        self.rect.midbottom = self.screen.get_rect().midbottom
+        # self.rect.midbottom = self.screen.get_rect().midbottom
 
         self.velx, self.vely = 0.0, 0.0
 

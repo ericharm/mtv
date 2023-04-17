@@ -24,8 +24,10 @@ def handle_key_up_event(game: Game, event: Event) -> None:
         player_domain.stop_player_jumping(game.player)
     elif event.key == pygame.K_LEFT:
         game.left_is_pressed = False
+        player_domain.stop_player_running(game.player)
     elif event.key == pygame.K_RIGHT:
         game.right_is_pressed = False
+        player_domain.stop_player_running(game.player)
 
     if not game.left_is_pressed and not game.right_is_pressed:
         player_domain.stop_player_running(game.player)
